@@ -1,0 +1,24 @@
+.jombotron {
+	background-image: url('../images/world.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	height: 60vh;
+	width: 100%;
+	top: 0px;
+	position: absolute;
+}
+
+.block-color {
+	background-color: red;
+	padding: 0px 10px 0px 10px;
+	margin-left: 10px;
+}
+
+.content{
+	margin-top: 27vh;
+}
+
+.img-center{
+	justify-content: center;
+}

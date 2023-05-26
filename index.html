@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tracking Covid 19 | Sindi Oktafianti</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="icon" href="assets/images/coronavirus.png" type="image/x-icon">
+
+</head>
+
+<body>
+    
+
+    <div class="jombotron">
+        <div class="container">
+            <div class="text-center" style="color: #FFFFFF;">
+                <div class="d-flex justify-content-center mt-5">
+                    <h1><b>Kasus Covid-19 di Negara</b></h1> <h1 class="block-color"> <b id="country"> ... </b> </h1>
+                </div>
+                <a href="" class="btn btn-warning" id="today"></a>
+            </div>
+        </div>
+    </div>
+
+<section class="content">
+
+    <main class="container" id="maincontent">
+        <section class="row justify-content-center my-5">
+            <div class="col-md-9">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <form class="d-flex" role="search">
+                            <select class="form-select me-2" id="countries" aria-label="Default select example">
+                                <option disabled selected>Pilih Negara</option>
+                            </select>
+                        </form>
+                        <div class="" id="loader">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- informasi -->
+    <div class="container info-covid">
+      <div class="row">
+        <!-- cart and colums -->
+
+        <!-- active cases -->
+        <div class="col-lg-4">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0 justify-content-center">
+              <div class="col-md-4 img-center justify-content-center">
+                <img src="assets/images/active.svg" class="img-fluid rounded-start mt-5" alt="add">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Active Cases</h5>
+                  <h1 id="active-case">0</h1>
+                  <p class="card-text"><small class="text-body-secondary">Case Covid-19</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- New Cases -->
+        <div class="col-lg-4">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0 justify-content-center">
+              <div class="col-md-4 img-center justify-content-center">
+                <img src="assets/images/new.svg" class="img-fluid rounded-start mt-5" alt="add">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">New Cases</h5>
+                  <h1 id="new-case">0</h1>
+                  <p class="card-text"><small class="text-body-secondary">Case Covid-19</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Recovered casess -->
+        <div class="col-lg-4">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0 justify-content-center">
+              <div class="col-md-4 img-center justify-content-center">
+                <img src="assets/images/receved.svg" class="img-fluid rounded-start mt-5" alt="add">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Recovered Cases</h5>
+                  <h1 id="recovered-case">0</h1>
+                  <p class="card-text"><small class="text-body-secondary">Case Covid-19</small></p>
+                  <input type="date" class="form-control" id="tanggal" style="display: none;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Total cases -->
+        <div class="col-lg-4">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0 justify-content-center">
+              <div class="col-md-4 img-center justify-content-center">
+                <img src="assets/images/cases.svg" class="img-fluid rounded-start mt-5" alt="add">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Total Cases</h5>
+                  <h1 id="total-cases">0</h1>
+                  <p class="card-text"><small class="text-body-secondary">Case Covid-19</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Total Deaths -->
+        <div class="col-lg-4">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0 justify-content-center">
+              <div class="col-md-4 img-center justify-content-center">
+                <img src="assets/images/death.svg" class="img-fluid rounded-start mt-5" alt="add">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Total Deaths</h5>
+                  <h1 id="total-deaths">0</h1>
+                  <p class="card-text"><small class="text-body-secondary">Case Covid-19</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Total Test -->
+        <div class="col-lg-4">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0 justify-content-center">
+              <div class="col-md-4 img-center justify-content-center">
+                <img src="assets/images/test.svg" class="img-fluid rounded-start mt-5" alt="add">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Total Test</h5>
+                  <h1 id="total-tests">0</h1>
+                  <p class="card-text"><small class="text-body-secondary">Case Covid-19</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Total Populasi -->
+        <div class="col-lg-4">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0 justify-content-center">
+              <div class="col-md-4 img-center justify-content-center">
+                <img src="assets/images/populasi.svg" class="img-fluid rounded-start mt-5" alt="add">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Total Populasi</h5>
+                  <h1 id="populasi">0</h1>
+                  <p class="card-text"><small class="text-body-secondary">Case Covid-19</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </main>
+
+</section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+        <script src="src/script/index.js" type="module"></script>
+
+</body>
+
+</html>
